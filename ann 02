@@ -1,0 +1,100 @@
+# Importing libraries
+import numpy as np
+
+# Function to check threshold value
+def linear_threshold_gate(dot, T):
+    '''Returns the binary threshold output'''
+    if dot >= T:
+        return 1
+    else:
+        return 0
+
+# Matrix of inputs
+input_table = np.array([
+    [0, 0],  # both no
+    [0, 1],  # one no, one yes
+    [1, 0],  # one yes, one no
+    [1, 1]   # both yes
+])
+
+print(f'Input table:\n{input_table}')
+
+# Define weights and threshold
+weights = np.array([1, -1])
+dot_products = input_table @ weights
+T = 1
+
+# Loop through each input row
+for i in range(4):
+    activation = linear_threshold_gate(dot_products[i], T)
+    print(f'Activation: {activation}') 
+
+
+
+
+///////////////////////////////////////
+
+
+
+🔬 Practical Title:
+Implementation of Linear Threshold Gate using NumPy
+
+📖 Theory in Simple English:
+A Linear Threshold Gate (LTG) is a basic model used in Machine Learning and Neural Networks to make decisions. It takes input values, multiplies them with weights, adds them, and then compares the result with a threshold.
+
+If the result is greater than or equal to the threshold, it gives output 1.
+
+Otherwise, it gives output 0.
+
+It is also called a Binary Step Function or Threshold Function.
+
+This type of gate is used in Perceptrons, which are the basic building blocks of Neural Networks. LTG helps the machine decide whether to activate a neuron or not.
+
+📌 Detailed Bullet Points:
+✅ A Linear Threshold Gate (LTG) is a decision-making function used in AI and ML.
+
+✅ It takes multiple inputs and applies weights to them.
+
+✅ It calculates the dot product (i.e., sum of input × weight).
+
+✅ It compares the result to a threshold (T).
+
+✅ If result ≥ T, then output = 1 (active).
+
+✅ Else, output = 0 (inactive).
+
+✅ Used for simple binary classification (Yes/No, True/False).
+
+✅ Implemented using NumPy in Python for matrix operations.
+
+✅ Very useful in Perceptron Algorithm and Neural Networks.
+
+✅ It is one of the simplest models to understand how neurons work.
+
+🧠 Formula:
+python
+Copy
+Edit
+dot_product = inputs @ weights
+output = 1 if dot_product >= threshold else 0
+🔁 Use Case Example:
+Imagine you want to decide:
+
+If a student passes based on marks in two subjects.
+
+Assign weight to each subject and a threshold (passing marks).
+
+LTG will give 1 (Pass) or 0 (Fail) depending on total marks.
+
+🔧 Python Concepts Used:
+NumPy for array and matrix operations
+
+@ operator for dot product (matrix multiplication)
+
+if-else for checking threshold condition
+
+for loop to check all input combinations
+
+
+
+
