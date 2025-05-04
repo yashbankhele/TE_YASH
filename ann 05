@@ -1,0 +1,115 @@
+title ========= Implementation of Perceptron Algorithm for Binary Classification using IRIS Dataset
+
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
+
+# Load dataset
+iris = load_iris()
+X = iris.data[:, [0, 2]]  # Using sepal length and petal length
+y = iris.target
+y = np.where(y == 0, 0, 1)  # Convert into binary classification (0 vs not 0)
+
+# Initialize weights and bias
+w = np.zeros(2)
+b = 0
+lr = 0.1
+epochs = 50
+
+# Perceptron function
+def perceptron(x, w, b):
+    z = np.dot(x, w) + b
+    return np.where(z >= 0, 1, 0)
+
+# Training loop
+for epoch in range(epochs):
+    for i in range(len(X)):
+        x = X[i]
+        target = y[i]
+        output = perceptron(x, w, b)
+        error = target - output
+
+        # Weight and bias update
+        w += lr * error * x
+        b += lr * error
+
+# Plotting decision boundary
+x_min, x_max = X[:, 0].min() - 0.5, X[:, 0].max() + 0.5
+y_min, y_max = X[:, 1].min() - 0.5, X[:, 1].max() + 0.5
+
+xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.02),
+                     np.arange(y_min, y_max, 0.02))
+
+Z = perceptron(np.c_[xx.ravel(), yy.ravel()], w, b)
+Z = Z.reshape(xx.shape)
+
+plt.contourf(xx, yy, Z, cmap=plt.cm.Paired)
+plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.Paired)
+plt.xlabel('Sepal length')
+plt.ylabel('Petal length')
+plt.title('Perceptron Decision Regions')
+plt.show()
+
+
+
+graph   ==========================================================
+
+
+
+
+
+
+ Theory (Simple English):
+The Perceptron is the simplest type of Artificial Neural Network and is used for binary classification problems. It is a supervised learning algorithm, meaning it learns from labeled data.
+
+In this practical, we use the Iris dataset and select two features:
+
+Sepal Length
+
+Petal Length
+
+We convert the multiclass Iris dataset into a binary classification problem (class 0 vs others), and train the perceptron to separate these two classes using a linear decision boundary.
+
+The perceptron learns by:
+
+Taking input values and weights.
+
+Calculating the weighted sum (dot product) + bias.
+
+Passing the result through a threshold function.
+
+Updating the weights if the prediction is wrong.
+
+📌 Bullet Points for Viva / Exam:
+✅ The Perceptron is a linear binary classifier that classifies data into 0 or 1.
+
+✅ It uses a step function (threshold) to decide the output.
+
+✅ Training is done using error-based learning – it updates weights if prediction is wrong.
+
+✅ We use 2 features from the Iris dataset: sepal length and petal length.
+
+✅ Dataset is converted into binary labels using np.where() function.
+
+✅ np.dot() is used to calculate the weighted sum (dot product).
+
+✅ matplotlib.pyplot is used to visualize the decision boundary.
+
+✅ This is an example of a linearly separable problem.
+
+🧠 Real-Life Analogy:
+Perceptron is like a yes/no decision machine. If the total score (input × weight) crosses a certain level (threshold), the output is "Yes" (1), otherwise "No" (0).
+
+📊 Tools Used:
+NumPy – for numerical calculations and dot products
+
+Matplotlib – for plotting decision regions
+
+Scikit-learn (sklearn) – for loading the Iris dataset
+
+
+
+
+
