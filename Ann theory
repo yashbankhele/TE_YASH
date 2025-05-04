@@ -1,0 +1,264 @@
+
+
+
+---
+
+Assignment 1: Plotting Activation Functions
+
+1. Step Function:
+
+Description: A step function gives a binary output: 0 or 1, based on whether the input crosses a certain threshold. It's a simple activation function that maps inputs into two categories.
+
+Mathematical Representation:
+
+
+
+
+f(x) = 
+     \begin{cases} 
+     1 & \text{if } x \geq \theta \\
+     0 & \text{if } x < \theta
+     \end{cases}
+
+- Not differentiable: This creates problems during backpropagation since gradient-based optimization methods need derivatives.
+ - Zero gradient for all non-zero inputs: This makes it unsuitable for deep networks.
+
+2. Sigmoid Function:
+
+Description: The sigmoid function maps input values to an output range of (0, 1), making it useful for models that predict probabilities.
+
+Mathematical Representation:
+
+
+
+
+f(x) = \frac{1}{1 + e^{-x}}
+
+- Vanishing gradients for very large or very small inputs (causing slow learning).
+ - Not zero-centered: The outputs are always positive, which can slow down convergence.
+
+3. Tanh Function:
+
+Description: Tanh is similar to sigmoid, but the output range is between (-1, 1), which makes it zero-centered.
+
+Mathematical Representation:
+
+
+
+
+f(x) = \tanh(x) = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}}
+
+- Still suffers from vanishing gradients, especially for deeper networks.
+ - Saturates for large input values, reducing the model’s learning ability.
+
+4. ReLU (Rectified Linear Unit):
+
+Description: ReLU is widely used in deep learning due to its simplicity and efficiency. It activates only when the input is positive, mapping negative inputs to zero.
+
+Mathematical Representation:
+
+
+
+
+f(x) = \max(0, x)
+
+- Reduces vanishing gradients problem.
+ - Simple and fast computation.
+
+Problems:
+
+Dying ReLU problem: Neurons can become inactive for negative inputs, potentially "dying" and never updating.
+
+
+
+
+---
+
+Assignment 2: Derivatives of Activation Functions
+
+1. Sigmoid Derivative:
+
+Formula:
+
+
+
+
+\sigma'(x) = \sigma(x)(1 - \sigma(x))
+
+2. Tanh Derivative:
+
+Formula:
+
+
+
+
+\text{tanh}'(x) = 1 - \text{tanh}^2(x)
+
+3. ReLU Derivative:
+
+Formula:
+
+
+
+
+f'(x) = 
+     \begin{cases} 
+     1 & \text{if } x > 0 \\
+     0 & \text{if } x \leq 0 
+     \end{cases}
+
+
+---
+
+Assignment 3: McCulloch-Pitts Neuron Model
+
+Overview: The McCulloch-Pitts model was one of the earliest models for artificial neurons. It used a threshold to decide if the neuron would fire (output 1) or not (output 0). This was a binary model.
+
+Importance: This simple model showed how neurons could perform logical operations (AND, OR) based on weighted sums of inputs.
+
+Limitations: It cannot solve non-linearly separable problems, such as XOR, and is too basic for practical applications today.
+
+
+
+---
+
+Assignment 4: AND Gate using Perceptron
+
+Training Process:
+
+The perceptron model is trained by iterating over the inputs and adjusting weights based on the error between the predicted and actual output. The training rule is as follows:
+
+If the prediction is correct, do nothing.
+
+If the prediction is incorrect, adjust the weights by adding or subtracting the error.
+
+
+Mathematical Representation:
+
+
+
+\Delta w = \eta \cdot (y_{\text{target}} - y_{\text{pred}}) \cdot x
+
+- \eta is the learning rate, y_{\text{target}} is the actual output, y_{\text{pred}} is the predicted output, and x is the input.
+
+
+---
+
+Assignment 5: OR Gate using Perceptron
+
+Training Rule: The OR gate perceptron learns by adjusting weights to minimize errors between the predicted and actual outputs. The learning rule is based on gradient descent, minimizing the squared error function.
+
+
+
+---
+
+Assignment 6: NOT Gate using Perceptron
+
+Binary Classification: The NOT gate is the simplest example of binary classification. A single perceptron with one input can learn to output 1 for input 0 and output 0 for input 1. It's an example of supervised learning with binary labels.
+
+
+
+---
+
+Assignment 7: XOR Gate using Multilayer Perceptron
+
+Hidden Layer Requirement:
+
+XOR cannot be solved by a single-layer perceptron because it is not linearly separable. A multilayer perceptron with at least one hidden layer is required to learn the XOR function.
+
+Reason: The XOR pattern requires a model capable of forming nonlinear decision boundaries, which is achievable by multi-layer networks.
+
+
+
+
+---
+
+Assignment 8: Adaline Network (Adaptive Linear Neuron)
+
+Difference from Perceptron: Unlike the perceptron that uses binary outputs, Adaline computes a continuous error by using the squared difference between the target and the predicted value. This allows it to perform regression tasks and learn continuous outputs.
+
+Mathematical Representation:
+
+
+E = \frac{1}{2} \sum_{i=1}^n (y_{\text{target}} - y_{\text{pred}})^2
+
+
+---
+
+Assignment 9: Hebbian Learning Rule
+
+Biological Inspiration:
+
+Hebbian learning is inspired by the way synapses strengthen when two neurons fire together. It’s summarized by the principle: “Neurons that fire together, wire together.”
+
+This rule helps in learning by reinforcing the connections between neurons that are activated simultaneously, making them more likely to activate together in the future.
+
+
+
+
+---
+
+Assignment 10: Backpropagation Algorithm
+
+Efficiency:
+
+Backpropagation is the process used to minimize the error in a neural network by calculating gradients of the loss function with respect to the weights.
+
+The gradients are then used to update the weights in a way that minimizes the error across all layers of the network.
+
+Formula: The error is propagated backward from the output layer to the input layer using the chain rule.
+
+
+
+
+---
+
+Assignment 11: Delta Rule
+
+Training Efficiency:
+
+The delta rule is a gradient descent method used in neural networks to minimize the error between the target output and the predicted output by updating the weights.
+
+Formula:
+
+
+
+\Delta w = \eta \cdot (y_{\text{target}} - y_{\text{pred}}) \cdot x
+
+
+---
+
+Assignment 12: McCulloch-Pitts Neuron Model (Revisited)
+
+Modern Implications:
+
+While McCulloch-Pitts model is simple, it laid the foundation for binary neural networks and helped in the understanding of neural computation.
+
+It’s important to understand the binary decision-making capability of neurons in more complex neural network models.
+
+
+
+
+---
+
+Assignment 13: Comparison of Activation Functions
+
+1. Leaky ReLU:
+
+Description: Leaky ReLU allows a small negative slope when the input is less than 0, preventing the "dying ReLU" problem where neurons get stuck during training.
+
+Formula:
+
+
+
+
+f(x) = \begin{cases} 
+     x & \text{if } x > 0 \\
+     \alpha x & \text{if } x \leq 0
+     \end{cases}
+
+
+---
+
+Ab tu in points ko detail mein paper mein likh sakta hai. Agar aur koi clarification chahiye toh bata de!
+
