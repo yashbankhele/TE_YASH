@@ -1,0 +1,109 @@
+Implement Greedy Search Algorithm For Selection Sort.
+
+////////
+
+# Selection sort in Python 
+# Time complexity: O(n*n) 
+
+def selectionSort(array, size): 
+    for ind in range(size): 
+        min_index = ind 
+        for j in range(ind + 1, size): 
+            # Select the minimum element in every iteration 
+            if array[j] < array[min_index]: 
+                min_index = j 
+        # Swapping the elements to sort the array 
+        array[ind], array[min_index] = array[min_index], array[ind] 
+ 
+arr = [-2, 45, 0, 11, -9, 88, -97, -202, 747] 
+size = len(arr) 
+selectionSort(arr, size) 
+
+print('The array after sorting in Ascending Order by selection sort is:') 
+print(arr)
+
+
+/////////////////
+
+
+1. selection sort
+
+Selection Sort is a simple comparison-based sorting algorithm.
+
+It works by repeatedly selecting the smallest element from the unsorted part and placing it in the correct position.
+
+
+---
+
+2. Greedy Approach:
+
+At every step, it selects the minimum element from the remaining array.
+
+This is a greedy choice, because it makes the best local decision in each step.
+
+It does not consider future consequences, just like other greedy algorithms.
+
+
+
+---
+
+3. Working Steps:
+
+1. Start from the first element.
+
+
+2. Find the smallest element in the remaining array.
+
+
+3. Swap it with the current element.
+
+
+4. Repeat for all positions until the array is sorted.
+
+
+
+
+---
+
+4. Example:
+
+Unsorted array: [5, 3, 8, 1]
+Step 1: [1, 3, 8, 5]
+Step 2: [1, 3, 8, 5]
+Step 3: [1, 3, 5, 8]
+Final sorted array: [1, 3, 5, 8]
+
+
+---
+
+5. Time Complexity:
+
+Best Case: O(n²)
+
+Worst Case: O(n²)
+
+Space Complexity: O(1) (In-place sorting)
+
+
+
+---
+
+6. Characteristics:
+
+Based on Greedy approach
+
+Simple to implement
+
+Not suitable for large datasets
+
+In-place algorithm (no extra memory used)
+
+Not stable by default
+
+
+
+---
+
+Conclusion:
+
+Selection Sort is a greedy algorithm that sorts an array by repeatedly selecting the smallest element and placing it at the right position.
