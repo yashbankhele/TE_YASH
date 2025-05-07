@@ -1,0 +1,92 @@
+Descriptive Statistics is the method of summarizing and organizing the data to understand patterns and trends. It includes:
+
+1. Measures of Central Tendency:
+
+These give us an idea of the central value of the dataset.
+
+Mean: Average of all data points.
+
+Formula: Mean = (∑X) / N
+
+
+Median: Middle value when data is sorted.
+
+Mode: Most frequent value.
+
+
+2. Measures of Dispersion (Variability):
+
+These show how much the data varies or is spread out.
+
+Range: Difference between max and min values.
+
+Standard Deviation (SD): Shows how much values deviate from the mean.
+
+Variance: Square of the standard deviation.
+
+
+Grouped Data Concepts:
+
+For grouped/continuous data, special formulas are used for mean, median, and mode using frequency, class width, etc.
+
+
+---
+
+KEY POINTS 
+
+1. Descriptive Statistics ka use data summarize karne ke liye hota hai.
+
+2. Mean – sab values ka average hota hai.
+
+3. Median – beech ka value hota hai (sorted data mein).
+
+4. Mode – sabse zyada baar aane wala number.
+
+5. Standard Deviation – values kitna mean se door hai, yeh batata hai.
+
+6. Variability – data kitna spread hai, uska idea deta hai.
+
+7. Categorical group karke hum summary nikal sakte hai (e.g., Age group wise Income).
+
+8. Python mein describe(), mean(), std() etc. functions se yeh stats nikalte hai.
+
+
+
+
+---
+
+ADVANTAGES:
+
+Data ko samajhne mein easy banata hai.
+
+Decision making mein help karta hai.
+
+Summary analysis time-saving hota hai.
+
+Variability samajhne mein madad karta hai.
+
+
+
+---
+
+DISADVANTAGES:
+
+Outliers (extreme values) ka effect padta hai, specially on mean.
+
+Data distribution ka detail idea nahi milta.
+
+Misleading ho sakta hai if not interpreted properly.
+
+
+
+---
+
+APPLICATIONS:
+
+Business: Sales/marketing analysis.
+
+Healthcare: Patient data analysis.
+
+Education: Student performance reports.
+
+Data Science: Initial data exploration and analysis.
