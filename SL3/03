@@ -1,3 +1,8 @@
+Write a Python program to display some basic statistical details like percentile, mean, standard
+deviation etc. of the species of ‘Iris-setosa’, ‘Iris-versicolor’ and ‘Iris- versicolor’ of iris.csv dataset.
+
+
+
 Descriptive Statistics is the method of summarizing and organizing the data to understand patterns and trends. It includes:
 
 1. Measures of Central Tendency:
