@@ -1,0 +1,102 @@
+Unit II – Introduction to Data Science
+
+
+
+1. Basics and Need of Data Science
+Data Science is the study of data using mathematics, statistics, and computer tools.
+
+It helps in identifying patterns, trends, and meaningful insights from large datasets.
+
+It is important because huge amounts of data are generated from social media, applications, sensors, etc.
+
+Data Science supports better decision-making and real-world problem-solving.
+
+
+
+
+2. Applications of Data Science
+Healthcare: Disease prediction, medical data analysis.
+
+Finance: Fraud detection, credit risk analysis.
+
+E-commerce: Product recommendations, customer behavior analysis.
+
+Transport: Route optimization, traffic prediction.
+
+Social Media: Trend analysis, personalized content suggestions.
+
+
+
+
+3. Relationship between Data Science and Information Science
+Data Science focuses on analyzing data and making predictions.
+
+Information Science deals with organizing, storing, and retrieving information.
+
+Data Science depends on Information Science to access and manage useful data.
+
+Both fields complement each other — one handles data storage, the other handles analysis.
+
+
+
+
+4. Business Intelligence (BI) vs Data Science
+Aspect	Business Intelligence (BI)	Data Science
+Focus	Analyzing past data	Predicting future trends
+Tools	Dashboards, reports	Machine learning, AI
+Approach	Descriptive analysis	Predictive & prescriptive
+Example	Sales reports	Predicting customer churn
+
+
+
+
+5. Data Types
+Structured Data: Organized in rows and columns (e.g., Excel spreadsheets).
+
+Unstructured Data: No fixed format (e.g., videos, images, free text).
+
+Semi-structured Data: Partially organized (e.g., XML, JSON, HTML).
+
+
+
+
+6. Data Collection
+The process of gathering raw data from various sources.
+
+Common Sources:
+
+Surveys and online forms
+
+Websites (through web scraping)
+
+IoT devices and sensors
+
+APIs and databases
+
+Good quality data collection ensures accurate analysis and results.
+
+
+
+
+7. Need of Data Wrangling
+Raw data is often incomplete, inconsistent, or contains errors.
+
+Data wrangling is required to clean, structure, and prepare data for analysis.
+
+It is an essential step before applying data science techniques or machine learning models.
+
+It improves efficiency and accuracy in data-driven projects.
+
+
+
+
+8. Methods of Data Wrangling (C.I.R.T.D.)
+C – Cleaning: Removing incorrect, missing, or duplicate data.
+
+I – Integration: Combining data from different sources into one dataset.
+
+R – Reduction: Removing unnecessary or redundant data to simplify analysis.
+
+T – Transformation: Changing the format, units, or scale of data (e.g., INR to USD).
+
+D – Discretization: Converting continuous data into categories (e.g., age into child/teen/adult).
